@@ -1,0 +1,30 @@
+drop table register;
+
+create table register(
+	id varchar2(10) primary key,
+	passwd varchar2(10) not null,
+	name varchar2(10) not null,
+	gender varchar2(10) not null,
+	uname varchar2(10) not null,
+	dname varchar2(10) not null
+);
+
+insert into register(id,passwd,name,gender,uname,dname)
+values('a1','1111','태연','여','abc','naver.com');
+
+insert into register(id,passwd,name,gender,uname,dname)
+values('a2','2222','수영','여','xxx','daum.net');
+
+insert into register(id,passwd,name,gender,uname,dname)
+values('a3','3333','보검','남','abc','google.com');
+
+select * from register;
+
+JDBC 프로그래밍 단계
+0. jar 파일 가져오기
+1. 드라이버 로드 Class.forName~
+2. 계정에 접속 DriverManager.getConnection( , , )
+3. sql문 분석 prepareStatement
+	3_1 : ?가 있다면 ?값 채우기
+4. sql문 실행 executeUpdate
+5. 접속끊기 close() (자원 반납)
