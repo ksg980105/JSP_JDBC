@@ -1,0 +1,25 @@
+drop sequence bseq;
+drop table book;
+
+create sequence bseq
+increment by 1
+start with 1
+minvalue 1;
+
+create table book(
+	no number primary key,
+	title varchar2(15) not null,
+	author varchar2(15) not null,
+	publisher varchar2(15) not null,
+	price number,
+	day date,
+	kind varchar2(20) not null,
+	bookstore varchar2(50) not null,
+	count number
+);
+
+insert into book
+values(bseq.nextval,'JSP','윤아','쌍용',1000,'2000-1-1','무료','알라딘',3);
+
+commit;
+select * from book;
