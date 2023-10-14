@@ -1,0 +1,22 @@
+drop table empl;
+drop sequence e_seq;
+
+create table empl(
+	mid number primary key,
+	name varchar2(10) not null,
+	depart number not null,
+	salary number
+);
+
+create sequence e_seq
+increment by 1
+start with 1
+minvalue 1
+maxvalue 10000;
+
+insert into empl(mid,name,depart,salary)
+values(e_seq.nextval,'kim',1,100);
+
+commit;
+
+select * from empl;
