@@ -1,0 +1,36 @@
+drop table member;
+
+create table member(
+	id varchar2(10) primary key,
+	passwd varchar2(10) not null,
+	name varchar2(10) not null,
+	reg_date date default sysdate
+);
+
+insert into member(id,passwd,name,reg_date)
+values('kim','1234','김연아','2020-3-4');
+
+insert into member(id,passwd,name,reg_date)
+values('park','5678','박세리','2011-9-20');
+
+select * from member;
+
+[JDBC 프로그래밍 단계]
+0.jar 파일 가져오기
+1.드라이버 로드
+2.계정에 접속
+3.sql문 분석
+4.분석한 sql문 실행
+5.접속을 끊기(사용한 자원 반납)
+
+
+
+
+
+
+
+
+
+
+
+
