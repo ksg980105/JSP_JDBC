@@ -1,0 +1,41 @@
+drop table student;
+create table student(
+	num number primary key,
+	id varchar2(10) not null,
+	passwd varchar2(10) not null,
+	name varchar2(10) not null,
+	year number not null,
+	month number not null,
+	day number not null,
+	hobby varchar2(50),
+	c number default 0,
+	java number default 0,
+	jsp number default 0,
+	sum number default 0
+);
+
+drop sequence stu_seq;
+create sequence stu_seq
+	increment by 1
+	start with 1 
+	minvalue 1
+	maxvalue 10000
+	nocache;
+
+insert into student(num,id,passwd,name,year,month,day,hobby,c,java,jsp,sum)
+values(stu_seq.nextval,'k1','1111','태연',1999,4,9,'달리기',20,50,90,160);
+
+commit;
+col num for 999
+col id for a5
+col passwd for a4
+col name for a8
+col year for 9999
+col month for 99
+col day for 99
+col hobby for a16
+col c for 999
+col java for 999
+col jsp for 999
+col sum for 999
+select * from student;
